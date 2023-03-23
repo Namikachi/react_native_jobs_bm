@@ -1,10 +1,15 @@
-import { StyleSheet, ScrollView, View, SafeAreaView } from "react-native";
-import { Stack } from "expo-router";
+import { StyleSheet, ScrollView, View, SafeAreaView } from 'react-native';
+import { Stack } from 'expo-router';
 
-import { COLORS, icons, images, SIZES } from "../constants";
-import { ScreenHeaderBtn, Welcome } from "../components";
+import { COLORS, icons, images, SIZES } from '../constants';
+import {
+	ScreenHeaderBtn,
+	Welcome,
+	PopularJobs
+} from '../components';
 
 export default function Page() {
+
 	return (
 		<SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
 			<Stack.Screen
@@ -17,7 +22,7 @@ export default function Page() {
 					headerRight: () => (
 						<ScreenHeaderBtn iconUrl={images.profile} dimension='100%' />
 					),
-					headerTitle: "",
+					headerTitle: '',
 				}}
 			/>
 			<ScrollView showsVerticalScrollIndicator={false}>
@@ -27,7 +32,8 @@ export default function Page() {
 						padding: SIZES.medium,
 					}}
 				>
-				<Welcome />
+					<Welcome />
+					<PopularJobs />
 				</View>
 			</ScrollView>
 		</SafeAreaView>
