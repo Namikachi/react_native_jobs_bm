@@ -6,17 +6,8 @@ import styles from './popularjobs.style';
 import { COLORS, SIZES } from '../../../constants';
 import PopularJobCard from '../../common/cards/popular/PopularJobCard';
 
-import useFetch from '../../../hook/useFetch';
-
-const PopularJobs = () => {
+const PopularJobs = ({ data, isLoading, error }) => {
 	const router = useRouter();
-	const { data, isLoading, error } = useFetch(
-		'search',
-		{
-			query: 'React Native developer',
-			num_pages: '1',
-		}
-	);
 
 	const [selectedJob, setSelectedJob] = useState();
 

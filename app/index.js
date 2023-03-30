@@ -9,7 +9,16 @@ import {
 	Nearbyjobs
 } from '../components';
 
+import useFetch from '../hook/useFetch';
+
 export default function Page() {
+	const { data, isLoading, error } = useFetch(
+		'search',
+		{
+			query: 'React Native developer',
+			num_pages: '1',
+		}
+	);
 
 	return (
 		<SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -34,8 +43,8 @@ export default function Page() {
 					}}
 				>
 					<Welcome />
-					<PopularJobs />
-					<Nearbyjobs />
+					<PopularJobs data={data} isLoading={isLoading} error={error} />
+					<Nearbyjobs data={data} isLoading={isLoading} error={error} />
 				</View>
 			</ScrollView>
 		</SafeAreaView>
