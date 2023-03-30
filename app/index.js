@@ -5,7 +5,8 @@ import { COLORS, icons, images, SIZES } from '../constants';
 import {
 	ScreenHeaderBtn,
 	Welcome,
-	PopularJobs
+	PopularJobs,
+	Nearbyjobs
 } from '../components';
 
 export default function Page() {
@@ -34,6 +35,7 @@ export default function Page() {
 				>
 					<Welcome />
 					<PopularJobs />
+					<Nearbyjobs />
 				</View>
 			</ScrollView>
 		</SafeAreaView>
